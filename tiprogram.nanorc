@@ -1,0 +1,30 @@
+syntax tiprogram "\.tiprogram$"
+comment "©"
+tabgives ":"
+header "PROGRAM:.*"
+
+# Variables
+icolor brightblue "[a-zA-Z_0-9]*"
+
+# Calls
+color yellow "^[: ]*[^[:space:]\(\{\[→►≠=><≥≤]*"
+
+# Functions
+color yellow "[a-zA-Z_0-9]*\("
+
+# String literals
+color green ""(\\.|[^"])*""
+
+# Numbers
+color cyan "\<([0-9]+)\>"
+
+# Keywords
+icolor blue "^[[:space:]]*(if|else|elseif|then|end|for)[[:space:]]*"
+
+# Commments
+color green "^©.*"
+color green "^[: ]*Comment .*"
+color green "^[: ]*\"Comment .*"
+
+# Operators and Brackets
+color brightblack "^:" "\(" ")" "\{" "}" "\[" "]" "\*" "/" "\+" "-" "&" "→" "≠" "=" ">" "<" "≥" "≤" "►" ","
